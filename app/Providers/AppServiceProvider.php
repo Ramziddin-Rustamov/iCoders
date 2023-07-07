@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             
         Paginator::useBootstrap();
         Gate::define('admin',function(User $user){
-            return $user->is_admin === 1 ?? $user->email == 'rustamovramziddin7@gmail.com';
+            return $user->is_admin === 1 ?? $user->email === 'rustamovramziddin7@gmail.com';
         });
         Gate::define('super-admin',function(User $user){
             return $user->email === 'rustamovramziddin7@gmail.com';

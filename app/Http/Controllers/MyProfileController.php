@@ -91,7 +91,7 @@ class MyProfileController extends Controller
         $request->validate([
             'name'=>['required','max:20'],
             'image'=>['max:10240','mimes:jpg,bmp,png'],
-            'phone'=>['min:9','max:12','regex:/^(\+99)[0-9]{9}$/']
+            'phone'=>['min:9','max:12']
         ]);
       
         $oneUser = $user;

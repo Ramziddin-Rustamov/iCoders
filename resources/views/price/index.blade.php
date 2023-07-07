@@ -2,7 +2,7 @@
 @section('title' , 'Pricing')
 @section('content')
   <!-- ======= Pricing Section ======= -->
-  <section id="pricing" class="pricing" style="padding-top:125px;">
+  {{-- <section id="pricing" class="pricing" style="padding-top:125px;">
     <div class="container" data-aos="fade-up">
 
       <div class="row">
@@ -79,11 +79,12 @@
       </div>
 
     </div>
-  </section><!-- End Pricing Section -->
+  </section> --}}
+  <!-- End Pricing Section -->
 
   <!-- ======= Frequently Asked Questions Section ======= -->
   <section id="faq" class="faq section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container pt-5" data-aos="fade-up">
 
       <div class="section-title">
         <h2>Frequently Asked Questions</h2>
@@ -92,50 +93,68 @@
       <div class="faq-list">
         <ul>
           <li data-aos="fade-up">
-            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Are you students at the University of Economics and Human Sciences in Poland? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
             <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
               <p>
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                Yes, we are students at the University of Economics and Human Sciences in Poland. We are pursuing our studies in the field of programming and computer science.
               </p>
             </div>
           </li>
 
           <li data-aos="fade-up" data-aos-delay="100">
-            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Do you have experience in coding and producing programmers?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
             <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-              </p>
+              <p>Yes, alongside our studies, we have actively engaged in coding and software development. We have gained experience by working on various projects and producing skilled programmers through our programming courses and workshops.</p>
             </div>
           </li>
 
           <li data-aos="fade-up" data-aos-delay="200">
-            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed"> What programming languages and technologies do you specialize in?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
             <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+              <p>We specialize in a wide range of programming languages and technologies, including but not limited to: 
+                - Java
+                - Python
+                - JavaScript
+                - PHP
+                - HTML/CSS
+                - SQL
+                - Laravel framework
+                - React.js
+                - Node.js
               </p>
             </div>
           </li>
 
           <li data-aos="fade-up" data-aos-delay="300">
-            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Can you provide programming assistance or guidance? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
             <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+              <p> Absolutely! We are available to provide programming assistance, guidance, and support. Whether you need help with coding assignments, debugging issues, or general programming advice, we are here to assist you to the best of our abilities.
               </p>
             </div>
           </li>
 
           <li data-aos="fade-up" data-aos-delay="400">
-            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">How can we get in touch with you? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
             <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+              <p>You can reach out to us through our website or via email. Please visit our contact page on our website for more information on how to get in touch with us.
               </p>
             </div>
           </li>
 
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6" class="collapsed"> Are you open to collaborations or partnerships? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+              <p>Absolutely! We are always open to collaborations and partnerships. If you have any exciting projects or ideas in mind, please feel free to reach out to us. We would love to explore potential collaborations and work together to achieve mutual goals.</p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-7" class="collapsed"> Can you provide references or testimonials from your previous clients or students? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+              <p>Yes, we can provide references or testimonials from our previous clients and students upon request. Please reach out to us, and we will be happy to share relevant information with you.
+              </p>
+            </div>
+          </li>
         </ul>
       </div>
 

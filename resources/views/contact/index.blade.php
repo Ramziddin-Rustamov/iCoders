@@ -4,7 +4,7 @@
 @section('content')
     <!-- ======= Contact Section ======= -->
    
-      <section id="contact" class="contact" style="padding-top:95px">
+      <section id="contact" class="contact" style="padding-top:105px">
         <div class="container">
   
           <div class="row justify-content-center" data-aos="fade-up">
@@ -16,19 +16,19 @@
                   <div class="col-lg-4 info">
                     <i class="bi bi-geo-alt"></i>
                     <h4>Location:</h4>
-                    <p>A108 Adam Street<br>New York, NY 535022</p>
+                    <p>Władysława Korotyńskieg<br>14, 02-121 Warszawa, Poland</p>
                   </div>
   
                   <div class="col-lg-4 info mt-4 mt-lg-0">
                     <i class="bi bi-envelope"></i>
                     <h4>Email:</h4>
-                    <p>info@example.com<br>contact@example.com</p>
+                    <p>rustamovvramziddin@gmail.com<br>rustamovpoland@gmail.com</p>
                   </div>
   
                   <div class="col-lg-4 info mt-4 mt-lg-0">
                     <i class="bi bi-phone"></i>
                     <h4>Call:</h4>
-                    <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+                    <p>+48732786924 <br> +48574058101</p>
                   </div>
                 </div>
               </div> 

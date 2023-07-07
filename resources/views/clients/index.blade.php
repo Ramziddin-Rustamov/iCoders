@@ -27,7 +27,7 @@
                @auth
                <div class="text-end"> 
                 <button type="submit" class="btn btn-primary my-2 ">
-                  Add yours
+                  Commit
                 </button>
               </div>   
                @endauth  
@@ -45,11 +45,9 @@
         @foreach ($clientviews as $item )
         <div class="col-lg-6">
           <div class="testimonial-item mt-4 mt-lg-4">
-            @if ($item->user->image)
-                <img class="img-account-profile rounded-circle mb-2 testimonial-img" src="{{ asset($item->user->image) }}" alt="{{ $item->user->name }}`image">
-                 @else
-                <img class="img-account-profile rounded-circle mb-2 testimonial-img" src="{{ asset('image/user-128.png') }}" alt="{{ $item->user->name }}`image">
-                @endif
+            <a href="{{ asset($item->user->image) }}">
+              <img class=" rounded img-fluid  " src="{{ asset($item->user->image) }}" alt="{{ $item->user->name }}`image">
+            </a>
             <a href="{{ route('client.show',['id'=>$item->user->id]) }}">{{ $item->user->name }}</a>
             <h4>{{ ($item->user->job) ?? 'No job yet' }}</h4>
             <p>

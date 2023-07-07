@@ -210,35 +210,20 @@
           <h2 class="text-success font-weight-bold ">Clients</h2>
         </div>
 
-        <div class="row no-gutters clients-wrap clearfix" >
-
-         
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-            </div>
+        <div class="row" >
+          <div class="col-lg-3 col-md-6 col-6">         
+              <img src="assets/img/clients/clientIT.jpg" class="img-fluid" alt="">
           </div>
 
-          <div class="col-lg-3 col-md-4 col-6">
-          
-            <div class="client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-            </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <img src="assets/img/clients/texno.jpg" class="img-fluid" alt="">
           </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
-            </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <img src="assets/img/clients/autoMed.png" class="img-fluid" alt="">
           </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
-            </div>
+          <div class="col-lg-3 col-md-6 col-6">
+              <img src="assets/img/clients/world1.jfif" class="img-fluid" alt="">
           </div>
-
         </div>
 
       </div>
