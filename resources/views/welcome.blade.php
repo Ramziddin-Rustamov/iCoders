@@ -146,7 +146,7 @@
             <div class=" col-12 col-lg-4 col-md-4 d-flex align-items-stretch mt-4" >
               <div class="icon-box iconbox-teal">
                 <div class="icon">
-                  <img class="" src="{{ asset('image/1648651919.png') }}"/>
+                  <img class="img-fluid rounded" src="{{ asset($technology->image) }}"/>
                 </div>
                 <h4><a href="{{ route('contact') }}">{{ $technology->name }}</a></h4>
                 <p>{{ $technology->body_en }}</p>
