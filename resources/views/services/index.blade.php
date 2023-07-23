@@ -12,7 +12,7 @@
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box iconbox-teal">
                   <div class="icon">
-                    <img  src="{{asset($technology->image) }}"/>
+                    <img class="img-fluid rounded" src="{{asset($technology->image) }}"/>
                   </div>
                   <h4><a href="">{{ $technology->name }}</a></h4>
                   <p>{{ $technology->body_uz }}</p>
