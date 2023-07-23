@@ -81,22 +81,18 @@ class AdminPostController extends Controller
     }
 
     public function destroy($id){
-        $post = Post::find($id);
-
-        $post->delete();
-        return back()->with('success','Post Deleted');
         try{
             // dd($post);
-            $post = Post::find($post);
+            $post = Post::find($id);
             if($post){
                 $file = File::exists(public_path($post->image));
                 if($file){
                     File::delete(public_path($post->image));
                     $post->delete();
-                    return back()->with('success', ' Deleted');
+                    return back()->with('success', 'Deleted with image');
                 }
                 $post->delete();
-                return back()->with('success', ' Deleted');
+                return back()->with('success', ' Deleted without image');
             }
             return back()->with('errors', 'Not found');
         }catch(Exception $e){
