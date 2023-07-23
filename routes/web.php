@@ -53,7 +53,7 @@ Route::get('/clientViews',[ClientViewController::class,'index'])->name('view');
 Route::get('/clientViews/{id}',[ClientViewController::class,'show'])->name('client.show');
 Route::post('/clientViews',[ClientViewController::class,'store'])->name('client.store');
 // price 
-Route::get('question',[PriceController::class,'index'])->name('price.index');
+Route::get('question',[PriceController::class,'index'])->name('question.index');
 
 // services 
 Route::get('/services', [ServicesController::class,'index'])->name('services');

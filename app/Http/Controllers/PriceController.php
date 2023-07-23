@@ -9,6 +9,6 @@ class PriceController extends Controller
     
 
     public function index(){
-        return view('price.index');
+        return view('question.index');
     }
 }

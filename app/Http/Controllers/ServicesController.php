@@ -14,7 +14,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $technologies = Technology::paginate(6);
+        $technologies = Technology::all();
         return view('services.index',[
             'technologies'=> $technologies
         ]);

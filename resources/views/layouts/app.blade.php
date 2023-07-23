@@ -48,7 +48,7 @@
 
           <li><a href="{{ route('services') }}"    class="{{ (Request::is('services') ? 'active' : '') }}">Services</a></li>
           <li><a href="{{ route('portfolio') }}"   class="{{ (Request::is('portfolio') ? 'active' : '') }}">Portfolio</a></li>
-          <li><a href="{{ route('price.index') }}" class="{{ (Request::is('question') ? 'active' : '') }}">QUESTIONS</a></li>
+          <li><a href="{{ route('question.index') }}" class="{{ (Request::is('question') ? 'active' : '') }}">QUESTIONS</a></li>
           <li><a href="{{ route('contact') }}"     class="{{ (Request::is('contact') ? 'active' : '') }}">Contact</a></li>
 
         </ul>
