@@ -36,7 +36,7 @@
 
       <div class="section-title">
         <h2>Features</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>With these exceptional features, we ensure a rewarding and enriching journey with us.</p>
       </div>
 
       <div class="row">

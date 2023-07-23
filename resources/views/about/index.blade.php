@@ -9,8 +9,12 @@
 
       <div class="section-title" data-aos="fade-up">
         <h2>{{ __('Our Team') }}</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>
+          <p>"Our Team - A united force driving excellence together, embracing diversity and fostering a positive work culture to achieve remarkable results
+
+            . Our dedicated and passionate team collaborates with mutual respect, valuing each other's unique skills and experiences
+            
+            . Together, we strive to make a positive impact, overcoming challenges and celebrating success as one cohesive unit."</p>  
+    </div>
 
       <div class="row">
         @if ($team->count())
@@ -46,7 +50,7 @@
 
       <div class="section-title" data-aos="fade-up">
         <h2>{{ __('Our Skills') }}</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>With proficiency in these technologies, we are well-equipped to take on diverse challenges and deliver exceptional solutions for our clients."</p>
       </div>
 
       <div class="row skills-content">
