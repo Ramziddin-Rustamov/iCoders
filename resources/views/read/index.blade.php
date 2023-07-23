@@ -63,9 +63,11 @@
               </article><!-- End blog entry -->
   
               <div class="blog-author d-flex align-items-center">
-                <img class="img-account-profile rounded-circle mb-2" style="width:120px; border-radius:20px; object-fit:cover;" src="{{ asset($post->user->image) }}" alt="{{ $post->user->name }}`image">
+                <img style="width: 100px;
+                height: 50%;
+                border-radius: 10px;"  src="{{ asset($post->user->image) }}" alt="{{ $post->user->name }}`image">
                 <div>
-                  <h4>Posted By  <span class="text-success"> {{ $post->user->name }}</span></h4>
+                  <h4>Posted By  <span class="text-success"> {{ $post->user->name }} </span></h4>
                   <div class="social-links">
                     <a href="{{ $post->user->telegram }}"><i class="bi bi-telegram"></i></a>
                     <a href="{{ $post->user->facebook }}"><i class="bi bi-facebook"></i></a>
