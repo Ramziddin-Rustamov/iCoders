@@ -11,13 +11,13 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         {{-- for register google account --}}
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="google" class="col-md-4 col-form-label text-md-end">{{ __('Google') }}</label>
 
                             <div class="col-md-6">
                                 <a id="google" class="form-control btn btn-danger" href="{{ route('login.google') }}">Log in By Google <i class="fa fa-google"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
 
                           {{-- for register Facebbok account
                           <div class="row mb-3">
@@ -29,7 +29,7 @@
                         </div> --}}
 
                           {{-- for register facebook account --}}
-                          <div class="row mb-3">
+                          {{-- <div class="row mb-3">
                             <label for="Git Hub" class="col-md-4 col-form-label text-md-end">{{ __('Git Hub') }}</label>
 
                             <div class="col-md-6">
@@ -41,9 +41,9 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <h5 class="text-center offset-md-2 font-weight-bold"><i class="fa fa-upper "></i> OR </h5>
+                        {{-- <h5 class="text-center offset-md-2 font-weight-bold"><i class="fa fa-upper "></i> OR </h5> --}}
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>

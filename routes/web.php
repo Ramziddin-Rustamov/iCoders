@@ -26,16 +26,16 @@ Auth::routes();
 
 
 //for google
-Route::get('/login/google',[App\Http\Controllers\Auth\LoginController::class , 'redirectToGoogle'])->name('login.google')->middleware('guest');
-Route::get('public/login/google/callback',[App\Http\Controllers\Auth\LoginController::class  , 'handleGoogleCallback'])->middleware('guest');
+// Route::get('/login/google',[App\Http\Controllers\Auth\LoginController::class , 'redirectToGoogle'])->name('login.google')->middleware('guest');
+// Route::get('public/login/google/callback',[App\Http\Controllers\Auth\LoginController::class  , 'handleGoogleCallback'])->middleware('guest');
 
 //for facebook
 // Route::get('/login/facebook',[App\Http\Controllers\Auth\LoginController::class , 'redirectToFacebook'])->name('login.facebook')->middleware('guest');
 // Route::get('public/login/facebook/callback',[App\Http\Controllers\Auth\LoginController::class  , 'handleFacebokkCallback'])->middleware('guest');
 
 //for github
-Route::get('/login/github',[App\Http\Controllers\Auth\LoginController::class , 'redirectToGithub'])->name('login.github')->middleware('guest');
-Route::get('public/login/github/callback',[App\Http\Controllers\Auth\LoginController::class  , 'handleGithubCallback'])->middleware('guest');
+// Route::get('/login/github',[App\Http\Controllers\Auth\LoginController::class , 'redirectToGithub'])->name('login.github')->middleware('guest');
+// Route::get('public/login/github/callback',[App\Http\Controllers\Auth\LoginController::class  , 'handleGithubCallback'])->middleware('guest');
 
 
 
