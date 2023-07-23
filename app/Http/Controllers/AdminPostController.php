@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\File;
+use Exception;
 class AdminPostController extends Controller
 {
     public function index(){
@@ -79,10 +80,28 @@ class AdminPostController extends Controller
         return redirect()->route('posts.index')->with('success','Updated Successfully');
     }
 
-    public function destroy(Post $id){
-        $post = Post::findOrFail($id);
+    public function destroy($id){
+        $post = Post::find($id);
+
         $post->delete();
         return back()->with('success','Post Deleted');
+        try{
+            // dd($post);
+            $post = Post::find($post);
+            if($post){
+                $file = File::exists(public_path($post->image));
+                if($file){
+                    File::delete(public_path($post->image));
+                    $post->delete();
+                    return back()->with('success', ' Deleted');
+                }
+                $post->delete();
+                return back()->with('success', ' Deleted');
+            }
+            return back()->with('errors', 'Not found');
+        }catch(Exception $e){
+        return back()->with('errors', 'Can not be deleted!');
+       }
     }
 
 }
