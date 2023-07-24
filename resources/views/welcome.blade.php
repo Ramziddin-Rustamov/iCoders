@@ -111,7 +111,7 @@
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
           <div class="member" >
             <div class="member-img">
-              <img src="{{ $user->image }}"  style="height: 366px;" class="img-fluid" alt="{{ $user->name }}`image">
+              <img src="{{ $user->image }}"   class="img-fluid" alt="{{ $user->name }}`image">
               <div class="social">
                 <a href="{{ $user->telegram }}"><i class="bi bi-telegram"></i></a>
                 <a href="{{ $user->facebook }}"><i class="bi bi-facebook"></i></a>
