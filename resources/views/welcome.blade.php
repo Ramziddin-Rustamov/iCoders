@@ -111,7 +111,7 @@
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
           <div class="member" >
             <div class="member-img">
-              <img src="{{ $user->image }}" class="img-fluid" alt="{{ $user->name }}`image">
+              <img src="{{ $user->image }}"  style="height: 366px;" class="img-fluid" alt="{{ $user->name }}`image">
               <div class="social">
                 <a href="{{ $user->telegram }}"><i class="bi bi-telegram"></i></a>
                 <a href="{{ $user->facebook }}"><i class="bi bi-facebook"></i></a>
@@ -146,7 +146,7 @@
             <div class=" col-12 col-lg-4 col-md-4 d-flex align-items-stretch mt-4" >
               <div class="icon-box iconbox-teal">
                 <div class="icon">
-                  <img class="img-fluid rounded" style="height: 366px;" src="{{ asset($technology->image) }}"/>
+                  <img class="img-fluid rounded" src="{{ asset($technology->image) }}"/>
                 </div>
                 <h4><a href="{{ route('contact') }}">{{ $technology->name }}</a></h4>
                 <p>{{ $technology->body_en }}</p>
