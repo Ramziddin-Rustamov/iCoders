@@ -146,7 +146,7 @@
             <div class=" col-12 col-lg-4 col-md-4 d-flex align-items-stretch mt-4" >
               <div class="icon-box iconbox-teal">
                 <div class="icon">
-                  <img class="img-fluid rounded" src="{{ asset($technology->image) }}"/>
+                  <img class="img-fluid rounded" style="height: 366px;" src="{{ asset($technology->image) }}"/>
                 </div>
                 <h4><a href="{{ route('contact') }}">{{ $technology->name }}</a></h4>
                 <p>{{ $technology->body_en }}</p>
@@ -154,7 +154,7 @@
             </div>
             @endforeach
             <div class=" justify-content-end text-align-end d-flex pt-3">
-              <a href="{{ route('portfolio') }}" class="btn btn-primary text-center font-weight-bold"> View more</a>
+              <a href="{{ route('services') }}" class="btn btn-primary text-center font-weight-bold"> View more</a>
             </div>
         @else
             <h6 class="text-center">{{ __('There is no technology yet') }}</h6>
