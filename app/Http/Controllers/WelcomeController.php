@@ -31,7 +31,7 @@ class WelcomeController extends Controller
         $slideImage = SlideImage::orderBy('created_at','DESC')->limit(3)->get();
         $posts = Post::orderBy('id', 'DESC')->with(['user','comments','likes'])->limit(2)->get();
         $team = User::orderBy('id', 'DESC')->where('is_admin',  '1')->limit(4)->get();
-        $technology = Technology::orderBy('created_at', 'desc')->limit(3)->get();
+        $technology = Technology::orderBy('id', 'asc')->limit(3)->get();
         $portfolio = Portfolio::orderBy('id', 'DESC')->limit(6)->get();
 
         return view('welcome',[
