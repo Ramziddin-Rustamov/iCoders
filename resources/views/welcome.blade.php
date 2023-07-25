@@ -187,7 +187,7 @@
           <div class="row portfolio-container" >
            @foreach ($portfolio as $item )
           <div class="col-12 col-lg-4 col-md-6 portfolio-item filter-{{ $item->category }}">
-            <img style="width: 100%;" src="{{ asset(json_decode($item->image)[0]) }}"   alt="Portfolio image">
+            <img style="width: 100%;" class="shadow p-3 mb-5 bg-body rounded" src="{{ asset(json_decode($item->image)[0]) }}"   alt="Portfolio image">
             <div class="portfolio-info">
               <h4>{{ $item->category }} {{ $item->id}}</h4>
               <p>{{  $item->category  }}</p>

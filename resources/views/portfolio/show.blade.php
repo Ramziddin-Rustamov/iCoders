@@ -46,7 +46,7 @@
                   <ul class="list-group">
                     <li class="list-group-item list-group-item-secondary"><strong>Category</strong>: {{ $portfolio->category }}</li>
                     <li class="list-group-item list-group-item-secondary"><strong>Client</strong>: {{ $portfolio->client }}</li>
-                    <li class="list-group-item list-group-item-secondary"><strong>Project date</strong>: {{ $portfolio->created_at }}</li>
+                    <li class="list-group-item list-group-item-secondary"><strong>Posted :</strong>: {{ $portfolio->created_at }}</li>
                     <li class="list-group-item list-group-item-secondary"><strong>Project URL</strong>: <a href="{{ $portfolio->link }}">{{ $portfolio->link }}</a></li>
                   </ul>
                 </div>
