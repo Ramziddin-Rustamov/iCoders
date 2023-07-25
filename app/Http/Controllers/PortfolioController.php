@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -155,6 +156,22 @@ class PortfolioController extends Controller
      */
     public function delete($id)
     {
-        dd($id);
+        try{
+            // dd($post);
+            $p = Portfolio::find($id);
+            if($p){
+                $file = File::exists(public_path($p->image));
+                if($file){
+                    File::delete(public_path($p->image));
+                    $p->delete();
+                    return back()->with('success', 'Deleted with image');
+                }
+                $p->delete();
+                return back()->with('success', ' Deleted without image');
+            }
+            return back()->with('errors', 'Not found');
+        }catch(Exception $e){
+        return back()->with('errors', 'Can not be deleted!');
+       }
     }
 }
