@@ -29,6 +29,11 @@
               <p>{{  $item->client  }}</p>
               <a href="{{ asset(json_decode($item->image)[0]) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="image"><i class="bx bx-plus"></i></a>
               <a href="{{ route('portfolio.show',['id'=>$item->id]) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              @if (strpos($item->link, 'https://') === 0)
+              <a target="_blank" href="{{$item->link}}" class="details-link" title="More Details"><i class="bx bx-world"></i></a>
+             @else
+              <a target="_blank" href="https://{{$item->link}}" class="details-link" title="See"><i class="bx bx-world"></i></a>
+             @endif
             </div>
           </div>
           @endforeach

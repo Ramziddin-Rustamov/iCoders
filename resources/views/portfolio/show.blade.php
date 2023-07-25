@@ -47,7 +47,14 @@
                     <li class="list-group-item list-group-item-secondary"><strong>Category</strong>: {{ $portfolio->category }}</li>
                     <li class="list-group-item list-group-item-secondary"><strong>Client</strong>: {{ $portfolio->client }}</li>
                     <li class="list-group-item list-group-item-secondary"><strong>Posted :</strong>: {{ $portfolio->created_at }}</li>
-                    <li class="list-group-item list-group-item-secondary"><strong>Project URL</strong>: <a href="{{ $portfolio->link }}">{{ $portfolio->link }}</a></li>
+                    <li class="list-group-item list-group-item-secondary"><strong>Project URL</strong>: 
+                      @if (strpos($portfolio->link, 'https://') === 0)
+                      <a target="_blank" href="{{ $portfolio->link }}">{{ $portfolio->link }}</a>
+                     @else
+                     <a target="_blank" href="https://{{ $portfolio->link }}">{{ $portfolio->link }}</a>
+                     @endif
+                    
+                    </li>
                   </ul>
                 </div>
               </div>
