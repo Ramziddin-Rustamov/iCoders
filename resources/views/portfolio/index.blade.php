@@ -23,16 +23,16 @@
           <div class="row portfolio-container" data-aos="fade-up">
            @foreach ($portfolio as $item )
           <div class="col-12 col-lg-4 col-md-6 portfolio-item filter-{{ $item->category }}">
-            <img style="width: 100%;" src="{{ asset(json_decode($item->image)[0]) }}"   alt="Portfolio image">
+            <img style="width: 100%;" class="shadow p-3 mb-5 bg-body rounded" src="{{ asset(json_decode($item->image)[0]) }}"   alt="Portfolio image">
             <div class="portfolio-info">
               <h4>{{ $item->category }}</h4>
               <p>{{  $item->client  }}</p>
               <a href="{{ asset(json_decode($item->image)[0]) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="image"><i class="bx bx-plus"></i></a>
               <a href="{{ route('portfolio.show',['id'=>$item->id]) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               @if (strpos($item->link, 'https://') === 0)
-              <a target="_blank" href="{{$item->link}}" class="details-link" title="More Details"><i class="bx bx-world"></i></a>
+              <a target="_blank" href="{{$item->link}}" class="" title="More Details"><i class="bx bx-world"></i></a>
              @else
-              <a target="_blank" href="https://{{$item->link}}" class="details-link" title="See"><i class="bx bx-world"></i></a>
+              <a target="_blank" href="https://{{$item->link}}" class="" title="See"><i class="bx bx-world"></i></a>
              @endif
             </div>
           </div>

@@ -40,7 +40,7 @@
           </section><!-- End Hero -->
             <div class="col-md-12 pt-2">
              <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
                 <div class="portfolio-info">
                   <h3 class="card-title">Project information</h3>
                   <ul class="list-group">
@@ -58,7 +58,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
                 <div class="portfolio-description">
                   <h2>Portfolio detail</h2>
                   <p>
