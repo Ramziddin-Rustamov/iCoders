@@ -25,8 +25,8 @@
           <div class="col-12 col-lg-4 col-md-6 portfolio-item filter-{{ $item->category }}">
             <img style="width: 100%;" src="{{ asset(json_decode($item->image)[0]) }}"   alt="Portfolio image">
             <div class="portfolio-info">
-              <h4>{{ $item->category }} {{ $item->id}}</h4>
-              <p>{{  $item->category  }}</p>
+              <h4>{{ $item->category }}</h4>
+              <p>{{  $item->client  }}</p>
               <a href="{{ asset(json_decode($item->image)[0]) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="image"><i class="bx bx-plus"></i></a>
               <a href="{{ route('portfolio.show',['id'=>$item->id]) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>

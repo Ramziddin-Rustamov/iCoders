@@ -42,12 +42,12 @@
              <div class="row">
               <div class="col-md-6">
                 <div class="portfolio-info">
-                  <h3>Project information</h3>
-                  <ul>
-                    <li><strong>Category</strong>: {{ $portfolio->category }}</li>
-                    <li><strong>Client</strong>: {{ $portfolio->client }}</li>
-                    <li><strong>Project date</strong>: {{ $portfolio->created_at }}</li>
-                    <li><strong>Project URL</strong>: <a href="{{ $portfolio->link }}">{{ $portfolio->link }}</a></li>
+                  <h3 class="card-title">Project information</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary"><strong>Category</strong>: {{ $portfolio->category }}</li>
+                    <li class="list-group-item list-group-item-secondary"><strong>Client</strong>: {{ $portfolio->client }}</li>
+                    <li class="list-group-item list-group-item-secondary"><strong>Project date</strong>: {{ $portfolio->created_at }}</li>
+                    <li class="list-group-item list-group-item-secondary"><strong>Project URL</strong>: <a href="{{ $portfolio->link }}">{{ $portfolio->link }}</a></li>
                   </ul>
                 </div>
               </div>
