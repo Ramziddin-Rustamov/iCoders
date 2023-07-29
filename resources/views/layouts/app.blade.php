@@ -169,13 +169,13 @@
         </div>
         <div class="credits">
         
-          Designed by <a href="#">iCoders</a>
+          Designed by <a href="https://t.me/ramziddinrustamov">iCoders</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="#" class="telegram"><i class="bx bxl-telegram"></i></a>
+        <a href="https://github.com/Ramziddin-Rustamov" class="instagram"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/ramziddin-rustamov-0a1320227/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://t.me/ramziddin_rustamov" class="telegram"><i class="bx bxl-telegram"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
