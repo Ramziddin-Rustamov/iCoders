@@ -10,7 +10,7 @@
 
       <div class="carousel-inner" role="listbox">
         @foreach ($slides as $slide )
-        <div class="carousel-item {{ ($loop->index == 0) ? 'active':'' }}" style="background-image: url('{{ $slide->image }}');">
+        <div class="carousel-item {{ ($loop->index == 0) ? 'active':'' }}" style="background-image: url('{{ $slide->image }}');background-repeat: no-repeat; background-size: cover; background-position: center; @media (max-width: 767px) { background-size: contain; }">
           <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp">
               <h2>{{ $slide->title_en }}</h2>
