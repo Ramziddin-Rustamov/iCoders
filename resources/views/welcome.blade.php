@@ -216,23 +216,23 @@
           <h2 class="text-success font-weight-bold ">Clients</h2>
         </div>
 
-        <div class="row" >
-          <div class="col">         
+        <div class="row text-center justify-content-center">
+          {{-- <div class="col-lg-3 col-md-6 col-6">         
               <img src="assets/img/clients/clientIT.jpg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col">
-            <img src="assets/img/clients/texno.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col">
-            <img src="assets/img/clients/autoMed.png" class="img-fluid" alt="">
-          </div>
-          <div class="col">
+          </div> --}}
+          <div class="col-lg-3 col-md-6 col-12">
               <img src="assets/img/clients/world1.jfif" class="img-fluid" alt="">
           </div>
-          <div class="col">
-            <img src="assets/img/clients/minded.jfif" class="img-fluid" alt="">
-         </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <img src="assets/img/clients/texno.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-3 col-md-6 col-12">
+            <img src="assets/img/clients/autoMed.png" class="img-fluid" alt="">
+          </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <img src="assets/img/clients/minded.jfif" class="img-fluid" alt="">
+          </div>
         </div>
 
       </div>
