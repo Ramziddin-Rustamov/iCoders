@@ -29,10 +29,10 @@
                 @endforeach
               </div>
               <a class="carousel-control-prev " href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left text-primary " aria-hidden="true"></span>
+                <span class="bg-primary  border-primary carousel-control-prev-icon bi bi-chevron-left  " aria-hidden="true"></span>
               </a>
               <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-righ text-primaryt" aria-hidden="true"></span>
+                <span class="bg-primary  border-primary  carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
               </a>
               <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
             </div>
