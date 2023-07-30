@@ -24,7 +24,7 @@
                
                 <div class="carousel-item {{ ($loop->index == 0) ? 'active':'' }}" style="background-image: url('{{ asset($image) }}'); background-position:center;">
                   <div class="carousel-container d-flex justify-content-center">
-                    <a href="{{ asset($image) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Portfolio image"><i class="bx bx-plus"></i></a>                  </div>
+                    <a href="{{ asset($image) }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link border-3 bg-primary pt-2 px-2 border border-primary rounded-circle " title="Portfolio image"><i class="bx bx-plus fa-3x h3 "></i></a>                  </div>
                 </div>   
                 @endforeach
               </div>
