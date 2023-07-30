@@ -16,28 +16,29 @@
         <div class="container"> 
           <div class="row">
           <!-- ======= Hero Section ======= -->
+          <a href="a">
           <section id="hero">
-            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade " data-bs-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 @foreach (json_decode($portfolio->image) as $image )
+               
                 <div class="carousel-item {{ ($loop->index == 0) ? 'active':'' }}" style="background-image: url('{{ asset($image) }}'); background-position:center;">
                   <div class="carousel-container d-flex justify-content-center">
-                    <div class="carousel-content animate__animated animate__fadeInUp">
-                      <a href="{{ asset($image)}}" data-gallery="portfolioGallery" class=" text-center" title="Portfolio image"><i class="bx bx-search text-center"></i> </a>           
-                    </div>
+                     <a href="{{ asset($image) }}"> <i class="bx bx-search text-center"></i> </a>           
                   </div>
-                </div>                
+                </div>   
                 @endforeach
               </div>
-              <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+              <a class="carousel-control-prev " href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left text-primary " aria-hidden="true"></span>
               </a>
               <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon bi bi-chevron-righ text-primaryt" aria-hidden="true"></span>
               </a>
               <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
             </div>
           </section><!-- End Hero -->
+          </a>
             <div class="col-md-12 pt-2">
              <div class="row">
               <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
