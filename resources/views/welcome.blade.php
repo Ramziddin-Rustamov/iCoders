@@ -105,7 +105,7 @@
           through collaboration, diversity, and a shared commitment to making a positive impact."</p>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-around">
         @if ($teamCount)
         @foreach ($team as $user )
         <div class="col-lg-3 col-md-6  d-flex align-items-stretch">
