@@ -12,9 +12,11 @@
         @foreach ($slides as $slide )
         <div class="carousel-item {{ ($loop->index == 0) ? 'active':'' }}" style="background-image: url('{{ $slide->image }}');background-repeat: no-repeat; background-size: cover; background-position: center; @media (max-width: 767px) { background-size: contain; }">
           <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
+            <div style="background-color: rgb(0 0 , 44);
+            border-radius: 10px;
+            letter-spacing: 1px;" class="carousel-content animate__animated animate__fadeInUp">
               <h2>{{ $slide->title_en }}</h2>
-              <p>{{ $slide->body_en }}</p>
+              <p class="">{{ $slide->body_en }}</p>
               @guest               
               <div class="text-center"><a href="{{ route('register') }}" class="btn-get-started">{{ __('Follow Us') }}</a></div>
               @endguest
