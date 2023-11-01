@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Services\AboutUsService;
 
 class AboutUsController extends Controller
 {
+
+
+    protected $AboutUsService;
+
+    public function __construct(AboutUsService $AboutUsService)
+    {
+        $this->AboutUsService = $AboutUsService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,75 +24,7 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $users = User::where('is_admin', '1')->get();
-        return view('about.index',[
-            'team'=>$users
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $adminUsers = $this->AboutUsService->getAdminUsers();
+        return view('about.index', ['team' => $adminUsers]);
     }
 }

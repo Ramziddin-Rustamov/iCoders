@@ -25,16 +25,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    
-    
+
+
 
     public function boot()
-{
-            
+    {
+
         Paginator::useBootstrap();
-        Gate::define('admin',function(User $user){
+        Gate::define('super-admin', function (User $user) {
             return  $user->email === 'rustamovramziddin7@gmail.com';
         });
-        
     }
 }

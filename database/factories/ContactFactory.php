@@ -15,9 +15,11 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>User::factory(),
             'reason'=>$this->faker->sentence(1),
-            'message'=>$this->faker->paragraph(3)
+            'message'=>$this->faker->paragraph(3),
+            'user_id'=> function(){
+                return User::factory()->create()->id;
+            },
         ];
     }
 }
