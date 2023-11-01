@@ -1,49 +1,57 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Portfolio;
-use App\Models\Post;
-use App\Models\SlideImage;
-use App\Models\Technology;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
+// services
+use App\Services\PortfolioService;
+use App\Services\PostService;
+use App\Services\SlideImageService;
+use App\Services\TechnologyService;
+use App\Services\UserService;
 
 class WelcomeController extends Controller
 {
+    private $technologyService;
+    private $postService;
+    private $userService;
+    private $portfolioService;
+    private $slideImageService;
+
+    public function __construct(
+        TechnologyService $technologyService,
+        PostService $postService,
+        UserService $userService,
+        PortfolioService $portfolioService,
+        SlideImageService $slideImageService,
+    ) {
+        $this->technologyService = $technologyService;
+        $this->postService = $postService;
+        $this->userService = $userService;
+        $this->portfolioService = $portfolioService;
+        $this->slideImageService = $slideImageService;
+    }
     public function index()
     {
-        $postCount = Cache::remember('count.posts',now()->addSecond(60),function (){
-            return Post::count();
-        });
-        $teamCount = Cache::remember('count.User',now()->addSecond(60),function (){
-            return User::count();
-        });
-        $techCount = Cache::remember('count.Technology',now()->addSecond(240),function (){
-            return Technology::count();
-        });
-        $portfolioCount = Cache::remember('count.Portfolio',now()->addSecond(120),function(){
-            return Portfolio::count();
-        });
-      
-        $team = User::orderBy('id', 'DESC')->where('is_admin',  '1')->limit(4)->get();
-        $slideImage = SlideImage::orderBy('created_at','DESC')->limit(3)->get();
-        $posts = Post::orderBy('id', 'DESC')->with(['user','comments','likes'])->limit(2)->get();
-        $team = User::orderBy('id', 'DESC')->where('is_admin',  '1')->limit(4)->get();
-        $technology = Technology::orderBy('id', 'asc')->limit(3)->get();
-        $portfolio = Portfolio::orderBy('id', 'DESC')->limit(6)->get();
+        $postCount = $this->postService->countPosts();
+        $teamCount = $this->userService->countUsers();
+        $techCount = $this->technologyService->countTechnologies();
+        $portfolioCount = $this->portfolioService->countPortfolios();
 
-        return view('welcome',[
-            'posts'=> $posts,
-            'team' =>$team,
-            'technologies' => $technology,
-            'portfolio'=>$portfolio,
-            'slides' => $slideImage,
-            'postCount'=>$postCount,
-            'teamCount'=>$teamCount,
-            'techCount'=>$techCount,
-            'portfolioCount'=>$portfolioCount
-        ]);
+        $team = $this->userService->getAdminUsers(4);
+        $slides = $this->slideImageService->getSlideImages(3);
+        $posts = $this->postService->getLatestPosts(2);
+        $technologies = $this->technologyService->getTechnologies(3);
+        $portfolio = $this->portfolioService->getLatestPortfolios(6);
+
+        return view('welcome', compact(
+            'posts',
+            'team',
+            'technologies',
+            'portfolio',
+            'slides',
+            'postCount',
+            'teamCount',
+            'techCount',
+            'portfolioCount'
+        ));
     }
 }
