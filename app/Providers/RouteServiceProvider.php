@@ -14,6 +14,7 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/';
 
     protected $namespace = 'App\\Http\\Controllers';
+    protected $webNamespace = 'App\\Http\\Controllers';
     
     public function boot()
     {
@@ -25,8 +26,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
+                Route::middleware('web')
+                ->namespace($this->webNamespace)
                 ->group(base_path('routes/web.php'));
         });
         
