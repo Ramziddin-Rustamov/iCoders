@@ -48,7 +48,7 @@
        
         @endforeach
         <div class="read-more text-end d-flex justify-content-end">
-            {{ $allposts->links() }}
+            {{-- {{ $allposts->links() }} --}}
        </div>
         <!-- End blog sidebar -->
         @else

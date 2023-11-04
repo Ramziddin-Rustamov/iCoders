@@ -3,21 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Services\PostService;
 
 class PostsController extends Controller
 {
-    public function index(){
-       $allpost = Post::orderBy('id','DESC')->paginate(8);
-       return view('allpost.index',[
-           'allposts'=>$allpost
-       ]);
+    private $PostService;
+
+    public function __construct(PostService $PostService)
+    {
+        $this->PostService = $PostService;
     }
 
-    public function findOne($id){
-        $post = Post::findOrFail($id);
-        return view('read.index',[
-            'post'=>$post
-        ]);
+    public function index()
+    {
+        $allposts = $this->PostService->getPaginate();
+        return view('allpost.index', compact('allposts'));
+    }
+
+    public function findOne(Post $post)
+    {
+        return view('read.index', compact('post'));
     }
 }
+
