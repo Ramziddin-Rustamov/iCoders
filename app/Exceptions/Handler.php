@@ -32,6 +32,7 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
+    // sdsfs
     public function register()
     {
         $this->reportable(function (Throwable $e) {
