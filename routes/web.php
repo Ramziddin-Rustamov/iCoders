@@ -78,7 +78,7 @@ Route::middleware('can:admin')->group(function () {
 });
 
 Route::get('/ourposts', [PostsController::class, 'index'])->name('posts.allposts');
-Route::get('posts-read/{id}', [PostsController::class, 'findOne'])->name('posts.findOne');
+Route::get('posts-read/{post}', [PostsController::class, 'findOne'])->name('posts.findOne');
 Route::get('comment/{id}', [CommentController::class, 'showUser'])->name('comment.owner');
 Route::get('/about', [AboutUsController::class, 'index'])->name('about');
 Route::get('/clientViews', [ClientViewController::class, 'index'])->name('view');

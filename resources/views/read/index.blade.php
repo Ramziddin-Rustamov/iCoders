@@ -10,7 +10,6 @@
             <div class="col-lg-12 entries">
   
               <article class="entry entry-single">
-                @if ($post->count())
                   
                 <div class="entry-img">
                   <a href="{{ asset($post->image) }}">
@@ -26,7 +25,7 @@
   
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ $post->user->name }}</li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ $post->user->name ?? 'NO user' }}</li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time >{{ $post->created_at->diffForHumans() }}</time></li>
                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> {{ $post->comments->count() }}</li>
                   </ul>
@@ -159,9 +158,6 @@
                 <!-- End comment #4 -->
               </div><!-- End blog comments --> 
             </div><!-- End blog entries list -->
-            @else
-            <div class="text-center">{{ __('There are no post yet') }}</div>
-            @endif
           </div>
   
         </div>

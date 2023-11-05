@@ -38,4 +38,8 @@ class PostService
         return $this->postModel
         ->orderBy('id', 'DESC')->paginate(8);
     }
+
+    // Post like method
+
+    
 }

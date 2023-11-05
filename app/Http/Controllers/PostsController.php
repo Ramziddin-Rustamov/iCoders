@@ -19,10 +19,14 @@ class PostsController extends Controller
         $allposts = $this->PostService->getPaginate();
         return view('allpost.index', compact('allposts'));
     }
+    
 
     public function findOne(Post $post)
     {
-        return view('read.index', compact('post'));
+        if($this->PostService->countPosts()){
+            return view('read.index', compact('post'));
+        }
+        abort(404); 
     }
 }
 
