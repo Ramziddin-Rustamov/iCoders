@@ -1,26 +1,26 @@
 <?php
 namespace App\Services;
 
-
 use App\Models\Technology;
 use Illuminate\Support\Facades\Cache;
 
-
 class TechnologyService
 {
-    public function countTechnologies()
+    private $technology;
+
+    public function __construct(Technology $technology)
     {
-        return Cache::remember('count.Technology', now()->addSecond(240), function () {
-            return Technology::count();
-        });
+        $this->technology = $technology;
     }
 
-    public function getTechnologies($limit = 3)
+    // Other methods...
+
+    public function getAll()
     {
-        $cacheKey = "technologies_{$limit}";
-    
-        return Cache::remember($cacheKey, now()->addMinutes(15), function () use ($limit) {
-            return Technology::orderBy('id', 'asc')->limit($limit)->get();
+        $cacheKey = "allTechnologies";
+
+        return Cache::remember($cacheKey, now()->addMinutes(15), function () {
+            return $this->technology->all();
         });
     }
 }

@@ -12,6 +12,8 @@ class PortfolioService
     {
         $this->portfolio = $portfolio;
     }
+
+    
     public function countPortfolios()
     {
         return Cache::remember('count.Portfolio', now()->addSecond(120), function () {
@@ -35,7 +37,7 @@ class PortfolioService
     {
         $cacheKeyIndex = "index_portfolio";
         return Cache::remember($cacheKeyIndex , now()->addMinutes(60), function () use ($paginate) {
-            return $this->portfolio->orderBy('id','DESC')->paginate(6);
+            return $this->portfolio->orderBy('id','DESC')->paginate($paginate);
         });
     }
 

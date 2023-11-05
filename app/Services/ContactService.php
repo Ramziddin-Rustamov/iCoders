@@ -31,4 +31,16 @@ class ContactService
         $contact = Contact::findOrFail($id);
         $contact->delete();
     }
+
+    public function createContactMessage($data)
+    {
+        $contact = new Contact([
+            'reason' => $data['reason'],
+            'message' => $data['message'],
+            'user_id' => $data['user_id'],
+        ]);
+        $contact->save();
+        return $contact;
+    }
+    
 }

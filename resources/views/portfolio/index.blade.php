@@ -8,7 +8,7 @@
         <div class="section-title">
           <h2 class="text-center text-success font-weight-bold pb-3">All Portfolio </h2> 
         </div>
-        @if ($portfolio->count())
+        @if ($count)
           <div class="row" data-aos="fade-up">
             <div class="col-lg-12 d-flex justify-content-center">
               <ul id="portfolio-flters">

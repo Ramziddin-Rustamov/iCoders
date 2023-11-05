@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PortfolioRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +24,8 @@ class PortfolioRequest extends FormRequest
     public function rules()
     {
         return [
-            'category' => 'required',
-            'client' => 'required',
-            'link' => 'required|url',
-            'detail_uz' => 'required',
-            'detail_en' => 'required',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'message'=> ['required'],
+            'reason' =>['required']
         ];
     }
 }
