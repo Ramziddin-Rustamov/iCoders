@@ -92,7 +92,7 @@
                          <i class="bx bx-user text-success"></i>    {{ __('My profile') }}
                        </a>
                       {{-- dashboard --}}
-                      @can('admin')
+                      @can('super-admin')
                       <a class="dropdown-item py-3" href="{{ route('home') }}">
                         <i class="bx bx-message text-success"></i>   {{ __('Dashboard') }} <i class="fa fa-list"></i>
                       </a>

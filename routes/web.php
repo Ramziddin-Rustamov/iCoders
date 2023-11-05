@@ -38,44 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('profile/{id}', [MyProfileController::class, 'show'])->name('profile.show');
 });
 
-Route::middleware('can:admin')->group(function () {
-    // Portfolio Routes
-    Route::get('admin-portfolio', [PortfolioController::class, 'indexAdmin'])->name('admin.portfolio.index');
-    Route::get('admin-portfolio-create', [PortfolioController::class, 'create'])->name('admin.portfolio.create');
-    Route::post('portfolio/store', [PortfolioController::class, 'store'])->name('admin.portfolio.store');
-    Route::get('portfolio/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('admin.portfolio.edit');
-    Route::put('portfolio/{portfolio}', [PortfolioController::class, 'update'])->name('admin.portfolio.update');
-    Route::delete('admin-portfolio/{portfolio}/delete', [PortfolioController::class, 'delete'])->name('admin.portfolio.delete');
+// Route::middleware('can:admin')->group(function () {
 
-    // Admin Posts
-    Route::get('admin-posts', [AdminPostController::class, 'index'])->name('posts.index');
-    Route::get('admin-post-create', [AdminPostController::class, 'create'])->name('posts.create.index');
-    Route::delete('AdminPostDelete/{id}', [AdminPostController::class, 'destroy'])->name('post.delete');
-    Route::post('admin-posts', [AdminPostController::class, 'store'])->name('posts.create');
-    Route::get('admin-post-edit/{id}/edit', [AdminPostController::class, 'edit'])->name('posts.edit');
-    Route::put('admin-post-update/{id}', [AdminPostController::class, 'update'])->name('posts.update');
-
-    // Slide Images
-    Route::get('slide', [AdminSlideImageController::class, 'index'])->name('slide.index');
-    Route::get('slide-create', [AdminSlideImageController::class, 'create'])->name('slide.create');
-    Route::post('slide-store', [AdminSlideImageController::class, 'store'])->name('slide.store');
-    Route::delete('slide-delete/{id}', [AdminSlideImageController::class, 'delete'])->name('slide.delete');
-
-    // Admin Users
-    Route::get('admin-users', [AdminUsersController::class, 'index'])->name('admin.user.index');
-    Route::get('admin-users/{id}', [AdminUsersController::class, 'show'])->name('admin.user.show');
-
-    // Admin Contact
-    Route::get('admin-contact', [AdminContactController::class, 'index'])->name('admin.contact.index');
-    Route::get('admin-contacts/{id}/edit', [AdminContactController::class, 'show'])->name('admin.contact.show');
-
-    // Technology
-    Route::get('admin-technoligy', [AdminTechnoligyController::class, 'index'])->name('admin.technology.index');
-    Route::get('admin-technoligy-create', [AdminTechnoligyController::class, 'create'])->name('admin.technology.create');
-    Route::post('admin-technoligy-post', [AdminTechnoligyController::class, 'store'])->name('admin.technology.store');
-    Route::get('admin-technoligy/{id}/show', [AdminTechnoligyController::class, 'show'])->name('admin.technology.show');
-    Route::delete('admin-technoliogy-delete/{id}', [AdminTechnoligyController::class, 'delete'])->name('admin.technology.delete');
-});
+// });
 
 Route::get('/ourposts', [PostsController::class, 'index'])->name('posts.allposts');
 Route::get('posts-read/{post}', [PostsController::class, 'findOne'])->name('posts.findOne');
@@ -95,8 +60,45 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Super Admin Routes
 Route::middleware('can:super-admin')->group(function () {
-    Route::get('super-admin-users/{id}/edit', [AdminUsersController::class, 'edit'])->name('admin.user.edit');
-    Route::put('super-admin-update-user/{user}', [AdminUsersController::class, 'update'])->name('admin.user.update');
-    Route::delete('admin-delete/{id}/delete', [AdminUsersController::class, 'delete'])->name('admin.user.delete');
-    Route::delete('admin-contact-delete/{id}/delete', [AdminContactController::class, 'delete'])->name('admin.contact.delete');
+        Route::get('super-admin-users/{id}/edit', [AdminUsersController::class, 'edit'])->name('admin.user.edit');
+        Route::put('super-admin-update-user/{user}', [AdminUsersController::class, 'update'])->name('admin.user.update');
+        Route::delete('admin-delete/{id}/delete', [AdminUsersController::class, 'delete'])->name('admin.user.delete');
+        Route::delete('admin-contact-delete/{id}/delete', [AdminContactController::class, 'delete'])->name('admin.contact.delete');
+
+        // Portfolio Routes
+        Route::get('admin-portfolio', [PortfolioController::class, 'indexAdmin'])->name('admin.portfolio.index');
+        Route::get('admin-portfolio-create', [PortfolioController::class, 'create'])->name('admin.portfolio.create');
+        Route::post('portfolio/store', [PortfolioController::class, 'store'])->name('admin.portfolio.store');
+        Route::get('portfolio/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('admin.portfolio.edit');
+        Route::put('portfolio/{portfolio}', [PortfolioController::class, 'update'])->name('admin.portfolio.update');
+        Route::delete('admin-portfolio/{portfolio}/delete', [PortfolioController::class, 'delete'])->name('admin.portfolio.delete');
+    
+        // Admin Posts
+        Route::get('admin-posts', [AdminPostController::class, 'index'])->name('posts.index');
+        Route::get('admin-post-create', [AdminPostController::class, 'create'])->name('posts.create.index');
+        Route::delete('AdminPostDelete/{id}', [AdminPostController::class, 'destroy'])->name('post.delete');
+        Route::post('admin-posts', [AdminPostController::class, 'store'])->name('posts.create');
+        Route::get('admin-post-edit/{id}/edit', [AdminPostController::class, 'edit'])->name('posts.edit');
+        Route::put('admin-post-update/{id}', [AdminPostController::class, 'update'])->name('posts.update');
+    
+        // Slide Images
+        Route::get('slide', [AdminSlideImageController::class, 'index'])->name('slide.index');
+        Route::get('slide-create', [AdminSlideImageController::class, 'create'])->name('slide.create');
+        Route::post('slide-store', [AdminSlideImageController::class, 'store'])->name('slide.store');
+        Route::delete('slide-delete/{id}', [AdminSlideImageController::class, 'delete'])->name('slide.delete');
+    
+        // Admin Users
+        Route::get('admin-users', [AdminUsersController::class, 'index'])->name('admin.user.index');
+        Route::get('admin-users/{id}', [AdminUsersController::class, 'show'])->name('admin.user.show');
+    
+        // Admin Contact
+        Route::get('admin-contact', [AdminContactController::class, 'index'])->name('admin.contact.index');
+        Route::get('admin-contacts/{id}/edit', [AdminContactController::class, 'show'])->name('admin.contact.show');
+    
+        // Technology
+        Route::get('admin-technoligy', [AdminTechnoligyController::class, 'index'])->name('admin.technology.index');
+        Route::get('admin-technoligy-create', [AdminTechnoligyController::class, 'create'])->name('admin.technology.create');
+        Route::post('admin-technoligy-post', [AdminTechnoligyController::class, 'store'])->name('admin.technology.store');
+        Route::get('admin-technoligy/{id}/show', [AdminTechnoligyController::class, 'show'])->name('admin.technology.show');
+        Route::delete('admin-technoliogy-delete/{id}', [AdminTechnoligyController::class, 'delete'])->name('admin.technology.delete');
 });
