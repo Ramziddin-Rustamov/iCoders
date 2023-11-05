@@ -2,43 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\User;
-use App\Models\Comment;
-use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
+use App\Services\CommentService;
 
 class CommentController extends Controller
 {
-    public function store(Post $post ,Request $request)
+    private $commentService;
+
+    public function __construct(CommentService $commentService)
     {
-        // validation
+        $this->commentService = $commentService;
+    }
 
-        $request->validate(([
-            'body'=>['required']
-        ]));
-        
-
-
-        // create a new comment
-        $post->comments()->create([
-            'user_id'=> $request->user()->id,
-            'body'=> $request->input('body')
-        ]);
+    public function store(CommentRequest $request)
+    {
+        $this->commentService->createComment($request);
 
         return back();
     }
 
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        $comment->delete();
-        return back();
-    }
+        $this->commentService->deleteComment($id);
 
-    public function showUser($id)
-    {
-        $user = User::findOrFail($id);
-        return view('read.user',[
-            'user' => $user
-        ]);
+        return back();
     }
 }
