@@ -2,94 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClientView;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Services\ClientViewService;
+use App\Http\Requests\ClientViewRequest;
 
 class ClientViewController extends Controller
 {
-    public function index(){
-        $clientview = ClientView::orderBy('id','DESC')->simplePaginate(6);
-        return view('clients.index',[
-            'clientviews' => $clientview
-        ]);
+    private $clientViewService;
+
+    public function __construct(ClientViewService $clientViewService)
+    {
+        $this->clientViewService = $clientViewService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function index()
     {
-        //
+       $clients = $this->clientViewService->paginate(6);
+       return view('clients.index', ['clients' => $clients]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ClientViewRequest $request)
     {
-        $request->validate([
-            'clientView'=>['required','max:300']
-        ]);
-        
-        $client = new ClientView();
-        $client->clientView = $request->clientView;
-        $client->user_id = $request->user()->id;
-        $client->save();
-        
-        return back()->with('success','You added ! , Thanks our feedback .');
+        $request->validated();
+    
+        $this->clientViewService->create($request->clientView, $request->user()->id);
+    
+        return back()->with('success', 'You added! Thanks for your feedback.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($id, ClientViewService $clientViewService)
     {
-        $client = User::findOrFail($id);
-        return view('clients.show',[
-            'user'=>$client
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $client = $clientViewService->showUser($id);
+    
+        if (!$client) {
+            return redirect()->route('clients.index')->with('error', 'User not found.');
+        }
+        return view('clients.show', ['user' => $client]);
     }
 }
