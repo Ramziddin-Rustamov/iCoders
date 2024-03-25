@@ -34,7 +34,7 @@ class PortfolioController extends Controller
 
     public function index (){
         $portfolio  = $this->portfolioService->indexPaginate(6);
-        $count  = $this->portfolioService->countPortfolios();
+        $count  = $this->portfolioService->countPortfolioes();
         return view('portfolio.index', compact('portfolio','count'));
     }
 

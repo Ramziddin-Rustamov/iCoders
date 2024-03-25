@@ -81,7 +81,7 @@
               {{-- starts comment form --}}
               <div class="reply-form">
                 <h4>{{ __('Leave a comment') }}</h4>
-                <form method="post" action="/posts/{{ $post->id }}/comments">
+                <form method="POST" action="/posts/{{ $post->id }}/comments">
                   @csrf
                    @auth
                       <div class="text-start d-flex">

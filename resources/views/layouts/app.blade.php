@@ -13,14 +13,26 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
-  <link href="{{asset('/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  {{-- <link href="{{asset('/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }} " rel="stylesheet">
   <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }} " rel="stylesheet">
-  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet"> --}}
+
+  {{-- start --}}
+<link href="{{ asset('assets/css/google-fonts.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/templatemo-villa-agency.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/owl.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/bundle.min.css') }}" rel="stylesheet">
+{{-- End --}}
+
+
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     @if(Request::is('profile'))
@@ -28,8 +40,126 @@
   @endif
 </head>
 <body>
+
+    <!-- ***** Preloader Start ***** -->
+  {{-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> --}}
+  <!-- ***** Preloader End ***** -->
+
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+          <ul class="info">
+            <li><i class="fa fa-envelope"></i> mangitobod@gmail.com</li>
+            <li><i class="fa fa-map"></i> Mangitobod Neighborhood</li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <h1 style="color:#f35525">MANGITOBOD</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index.html" class="active">Asosiy</a></li>
+                        <li><a href="properties.html">Biz haqimizda ko'proq</a></li>
+                        <li><a href="contact.html">Biz bilan bog'laning </a></li>
+                        <li class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/">
+                                <i class="bx bx-home text-success"></i> Main Page
+                            </a>
+                        </li>
+                        <li><a href="contact.html">Yangiliklar </a></li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/">
+                                <i class="bx bx-home text-success"></i> Main Page
+                            </a>
+                        </div>
+                        <li class="nav-item dropdown">
+                            @guest
+                                @if (Route::has('login'))
+                                    <a style="{{ (Request::is('login') ? 'color: green; text-decoration: underline;' : '') }}" class="nav-link" href="{{ route('login') }}"><span>{{ __('Login') }}</span></a>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    <a style="{{ (Request::is('register') ? 'color: green; text-decoration: underline;' : '') }}"  class="nav-link" href="{{ route('register') }}"><span>{{ __('Register') }}</span></a>
+                                @endif
+                            @else
+                            <a style="background-color: #f35525;border-radius: 20px; " class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ asset(Auth::user()->image) }}" alt="{{ Auth::user()->name }}'s image"class="rounded-circle position-relative" style="width: 30px; height: 30px; margin-right: 8px; border-radius: 20px; right: -4px; bottom: 8px;">
+                                {{ explode(" ", Auth::user()->name)[0] }}
+                            </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    {{-- Main menu --}}
+                                    <a class="dropdown-item py-3" href="/">
+                                        <i class="bx bx-home text-success"></i>    {{ __('Main Page') }}
+                                    </a>
+                                    {{-- My Profile --}}
+                                    <a class="dropdown-item py-3" href="{{ route('profile.index') }}">
+                                        <i class="bx bx-user text-success"></i>    {{ __('My profile') }}
+                                    </a>
+                                    {{-- Dashboard --}}
+                                    @can('super-admin')
+                                        <a class="dropdown-item py-3" href="{{ route('home') }}">
+                                            <i class="bx bx-message text-success"></i>   {{ __('Dashboard') }} <i class="fa fa-list"></i>
+                                        </a>
+                                    @endcan
+                                    <a class="dropdown-item py-3" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        <i class="bx bx-exit text-success"></i> {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            @endguest
+                        </li>
+                        <li><a href="#"><i class="fa fa-calendar"></i> 21.03.2024</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+  <!-- ***** Header Area End ***** -->
+
+
      <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top mb-5 ">
+  {{-- <header id="header" class="fixed-top mb-5 ">
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="/"><span>i</span>Coder</a></h1>
@@ -70,29 +200,29 @@
                         <a style="{{ (Request::is('register') ? 'color: green; text-decoration: underline;' : '') }}"  class="nav-link {{ (Request::is('register') ? 'active' : '') }}" href="{{ route('register') }}"><span>{{ __('Register') }}</span></a>
                     </li>
                 @endif
-            @else         
+            @else
                 <li class="nav-item dropdown d-flex "  id="navbarDropdown">
                     <a class="ps-md-3 " href="{{ asset(Auth::user()->image)  }}">
-                      <img 
+                      <img
                        class="user-circle-image-class"
-                      src="{{ asset(Auth::user()->image)  }}" 
-                      alt="{{ Auth::user()->name }} `s image'">      
+                      src="{{ asset(Auth::user()->image)  }}"
+                      alt="{{ Auth::user()->name }} `s image'">
                     </a>
                     <a style="padding-top:16px" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ explode(" ", Auth::user()->name)[0] }}
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
                       {{-- Main menu --}}
-                      <a class="dropdown-item py-3  " href="/">
+                      {{-- <a class="dropdown-item py-3  " href="/">
                         <i class="bx bx-home text-success"></i>    {{ __('Main Page') }}
-                      </a>
+                      </a> --}}
                       {{-- My Profile --}}
-                       <a class="dropdown-item py-3  " href="{{ route('profile.index') }}">
+                       {{-- <a class="dropdown-item py-3  " href="{{ route('profile.index') }}">
                          <i class="bx bx-user text-success"></i>    {{ __('My profile') }}
-                       </a>
+                       </a> --}}
                       {{-- dashboard --}}
-                      @can('super-admin')
+                      {{-- @can('super-admin')
                       <a class="dropdown-item py-3" href="{{ route('home') }}">
                         <i class="bx bx-message text-success"></i>   {{ __('Dashboard') }} <i class="fa fa-list"></i>
                       </a>
@@ -108,18 +238,18 @@
                     </div>
                 </li>
             @endguest
-        </ul>   <!-- Right Side Of Navbar --> 
+        </ul>   <!-- Right Side Of Navbar -->
       </div>
-    </div>
-  </header> 
+    </div> --}}
+  {{-- </header> --}}
   <!--!End Header-->
-   
+
         <main id="app">
             @yield('content')
         </main>
 
          <!-- ======= Footer ======= -->
-  <footer id="footer">
+  {{-- <footer id="footer">
 
     <div class="footer-top">
       <div class="container">
@@ -168,7 +298,7 @@
           &copy; Copyright <strong><span>iCoder</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-        
+
           Designed by <a href="https://t.me/ramziddinrustamov">iCoders</a>
         </div>
       </div>
@@ -178,22 +308,42 @@
         <a href="https://t.me/ramziddin_rustamov" class="telegram"><i class="bx bxl-telegram"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer> --}}
+  <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> 
+  {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --}}
 
- 
+
 
   <!-- Vendor JS Files -->
-  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  {{-- <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
   <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
- 
+  <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script> --}}
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-8">
+        <p>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved.
+
+        Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com">ThemeWagon</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  {{-- starts --}}
+  <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+  <script src="{{ asset('assets/js/counter.js') }}"></script>
+  <script src="{{ asset('assets/js/custom.js') }}"></script>
+  {{-- End --}}
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>

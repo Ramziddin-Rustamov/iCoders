@@ -13,15 +13,15 @@ class PortfolioService
         $this->portfolio = $portfolio;
     }
 
-    
-    public function countPortfolios()
+
+    public function countPortfolioes()
     {
         return Cache::remember('count.Portfolio', now()->addSecond(120), function () {
             return $this->portfolio->count();
         });
     }
 
-    public function getLatestPortfolios($limit = 6)
+    public function getLatestPortfolioes($limit = 6)
     {
         // Define a cache key for this specific query
         $cacheKey = "latest_portfolios_{$limit}";

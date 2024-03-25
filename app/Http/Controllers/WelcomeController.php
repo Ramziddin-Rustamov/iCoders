@@ -34,13 +34,13 @@ class WelcomeController extends Controller
         $postCount = $this->postService->countPosts();
         $teamCount = $this->userService->countUsers();
         $techCount = $this->technologyService->countTechnologies();
-        $portfolioCount = $this->portfolioService->countPortfolios();
+        $portfolioCount = $this->portfolioService->countPortfolioes();
 
         $team = $this->userService->getAdminUsers(4);
         $slides = $this->slideImageService->getSlideImages(3);
         $posts = $this->postService->getLatestPosts(2);
         $technologies = $this->technologyService->getTechnologies(3);
-        $portfolio = $this->portfolioService->getLatestPortfolios(6);
+        $portfolio = $this->portfolioService->getLatestPortfolioes(6);
 
         return view('welcome', compact(
             'posts',

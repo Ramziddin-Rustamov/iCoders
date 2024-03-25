@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentRequest;
 use App\Services\CommentService;
+use Illuminate\Support\Facades\Request;
 
 class CommentController extends Controller
 {
@@ -14,8 +15,9 @@ class CommentController extends Controller
         $this->commentService = $commentService;
     }
 
-    public function store(CommentRequest $request)
+    public function store(Request $req, CommentRequest $request)
     {
+        return 'a';
         $this->commentService->createComment($request);
 
         return back();

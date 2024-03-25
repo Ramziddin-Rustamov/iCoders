@@ -18,8 +18,8 @@ class ClientViewController extends Controller
 
     public function index()
     {
-       $clients = $this->clientViewService->paginate(6);
-       return view('clients.index', ['clients' => $clients]);
+       $clientviews = $this->clientViewService->paginate(6);
+       return view('clients.index', compact('clientviews'));
     }
 
     public function store(ClientViewRequest $request)

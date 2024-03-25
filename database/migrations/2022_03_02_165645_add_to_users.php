@@ -14,12 +14,14 @@ class AddToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('birthday');
             $table->string('telegram')->nullable();
             $table->string('instagram')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('github')->nullable();
             $table->string('job')->nullable();
             $table->text('about_uz')->nullable();
+
         });
     }
 

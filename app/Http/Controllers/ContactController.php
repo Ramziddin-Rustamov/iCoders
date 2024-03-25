@@ -27,6 +27,7 @@ class ContactController extends Controller
     {
         $data = $contactRequest->validated();
         $user = $request->user();
+        
         $data['user_id'] = $user->id;
         $this->contactService->createContactMessage($data);
         return back()->with('success','Cool ...');
